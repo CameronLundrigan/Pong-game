@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" type="module"></script>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" type="module"></script>
 </head>
+
 <body>
-    <div class="score">
-        <div id="player-score">0</div>
-        <div id="computer-score">0</div>
+  <div class="score">
+    <div id="player-score">0</div>
+    <div id="computer-score">0</div>
+  </div>
+
+  <!-- Game Over Overlay (initially hidden) -->
+  <div class="game-over">
+    <div id="game-over-overlay">
+      <div id="game-over-message"></div>
+      <button id="restart-button" class="play-again-button">Play Again</button>
     </div>
-    <div class="ball" id="ball"></div>
-    <div class="paddle left" id="player-paddle"></div>
-    <div class="paddle right" id="computer-paddle"></div>
+  </div>
+
+  <!-- Game elements -->
+  <div class="ball" id="ball"></div>
+  <div class="paddle left" id="player-paddle"></div>
+  <div class="paddle right" id="computer-paddle"></div>
 </body>
 
 </html>
