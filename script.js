@@ -1,0 +1,4 @@
+import Ball from "./Ball.js"
+
+const ball = new Ball(document.getElementById("ball"))
+
