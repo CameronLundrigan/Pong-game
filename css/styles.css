@@ -104,3 +104,32 @@
   cursor: pointer;
 }
   
+
+#start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#header {
+  text-align: center;
+  font-size: large;
+  color: white;
+}
+
+#start-button {
+  display: block;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  /* Center the button horizontally */
+  margin-left: auto;
+  margin-right: auto;
+}
