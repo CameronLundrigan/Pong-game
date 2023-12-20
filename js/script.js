@@ -9,11 +9,39 @@ const computerScoreElem = document.getElementById("computer-score");
 const gameOverOverlay = document.getElementById("game-over-overlay");
 const gameOverMessage = document.getElementById("game-over-message");
 const playAgainButton = document.getElementById("restart-button");
+const startScreen = document.getElementById("start-screen");
+const startButton = document.getElementById("start-button");
+const scoreBoard=document.getElementById("score");
 
+startScreen.style.display= "block";
+elements.style.display = "none";
 gameOverOverlay.style.display = "none";
+playAgainButton.style.display = "none";
+score.style.display = "none";
 
-let gameRunning = true;
-let lastTime;
+let gameRunning = false;
+let lastTime; 
+startButton.addEventListener("click", startGame);
+
+function startGame() {
+  startScreen.style.display = "none"; // Hide the start screen
+  gameRunning = true; // Start the game
+  resetGame(); // Reset game state
+
+  // Show the game elements
+  elements.style.display = "block";
+  gameOverOverlay.style.display = "block";
+  playAgainButton.style.display = "none";
+  scoreBoard.style.display = "flex";
+  window.requestAnimationFrame(update); // Start the animation loop
+}
+
+function resetGame() {
+  playerScoreElem.textContent = "0";
+  computerScoreElem.textContent = "0";
+  ball.reset();
+  computerPaddle.reset();
+}
 
 function update(time) {
   if (gameRunning) {
@@ -59,7 +87,7 @@ function handleLose() {
 
     // Update the game over message
     const winnerMessage =
-      parseInt(playerScoreElem.textContent) >= 5 ? "You Win!" : "You Lose!";
+      parseInt(playerScoreElem.textContent) >= 5 ? "You Won!" : "You Lost!";
     gameOverMessage.textContent = winnerMessage;
   } else {
     ball.reset();

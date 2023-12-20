@@ -12,10 +12,15 @@
 <body>
 
     
+   <!-- Starting Screen (initially displayed) -->
+<div id="start-screen">
+    <h1>Welcome to Pong Game!</h1>
+    <label for="username">Enter your username:</label>
+    <input type="text" id="username" />
+    <button id="start-button">Start Game</button>
+  </div>
 
-
-
-  <div class="score">
+  <div class="score" id="score">
     <div id="player-score">0</div>
     <div id="computer-score">0</div>
   </div>
@@ -29,9 +34,11 @@
   </div>
 
   <!-- Game elements -->
+  <div class="elements" id="elements">
   <div class="ball" id="ball"></div>
   <div class="paddle left" id="player-paddle"></div>
   <div class="paddle right" id="computer-paddle"></div>
+</div>
 </body>
 
 </html>
